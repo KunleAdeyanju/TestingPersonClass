@@ -172,5 +172,20 @@ public class TestPerson {
         Assert.assertEquals(expected2,actual2);
     }
 
+    @Test
+    public void birthdayCheck(){
+        // Give
+        int age = 34;
+        Person person = new Person(age);
+        Integer expected = 35;
+
+        // When
+        person.birthday();
+
+        // then
+        Integer actual = person.getAge();
+        Assert.assertEquals(expected,actual);
+    }
+
 
 }

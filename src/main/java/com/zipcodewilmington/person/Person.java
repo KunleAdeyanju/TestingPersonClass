@@ -70,7 +70,7 @@ public class Person {
     }
 
 
-    public void birthday(int amount){
+    public void birthday(){
         age++;
     }
 
