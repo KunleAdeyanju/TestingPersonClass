@@ -151,4 +151,26 @@ public class TestPerson {
         Integer actual = person.getAge();
         Assert.assertEquals(expected, actual);
     }
+
+    @Test
+    public void setMarried() {
+        // Given
+        Person person = new Person();
+        Boolean expected = true; //added
+        Boolean expected1 = true;
+        Boolean expected2 = false;
+
+        // When
+        person.setMarried(expected);
+
+        // Then
+        Boolean actual = person.getIsMarried();
+        Boolean actual1 = person.gotMarried();
+        Boolean actual2 = person.gotDivorced();
+        Assert.assertEquals(expected, actual); // added
+        Assert.assertEquals(expected1, actual1);
+        Assert.assertEquals(expected2,actual2);
+    }
+
+
 }

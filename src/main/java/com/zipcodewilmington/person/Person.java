@@ -74,11 +74,13 @@ public class Person {
         age++;
     }
 
-    public void gotMarried(){
+    public Boolean gotMarried(){
         isMarried = true;
+        return isMarried;
     }
 
-    public void gotDivorced(){
+    public Boolean gotDivorced(){
         isMarried = false;
+        return isMarried;
     }
 }
