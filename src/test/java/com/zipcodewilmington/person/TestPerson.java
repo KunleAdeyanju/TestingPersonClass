@@ -12,6 +12,7 @@ public class TestPerson {
         // Given
         String expectedName = "";
         Integer expectedAge = Integer.MAX_VALUE;
+        boolean expectedMartialStatus = false; //added
 
         // When
         Person person = new Person();
@@ -19,9 +20,11 @@ public class TestPerson {
         // Then
         String actualName = person.getName();
         Integer actualAge = person.getAge();
+        Boolean actualMaritalStatus = person.getIsMarried(); //added
 
         Assert.assertEquals(expectedName, actualName);
         Assert.assertEquals(expectedAge, actualAge);
+        Assert.assertEquals(expectedMartialStatus, actualMaritalStatus); // added
     }
 
     @Test
@@ -50,6 +53,19 @@ public class TestPerson {
         Assert.assertEquals(expected, actual);
     }
 
+    @Test
+    public void testConstructorWithMaritalStatus(){
+        // Given
+        Boolean expected = true;
+
+        // When
+        Person person = new Person(expected);
+
+        //Then
+        Boolean actual = person.getIsMarried();
+        Assert.assertEquals(expected, actual);
+    }
+
 
     @Test
     public void testConstructorWithNameAndAge() {
@@ -66,6 +82,46 @@ public class TestPerson {
 
         Assert.assertEquals(expectedAge, actualAge);
         Assert.assertEquals(expectedName, actualName);
+    }
+
+    @Test
+    public void testConstructorWithAgeAndMaritalStatus() {
+        // Given
+
+        Integer expectedAge = Integer.MAX_VALUE;
+        boolean expectedMartialStatus = false; //added
+
+        // When
+        Person person = new Person();
+
+        // Then
+
+        Integer actualAge = person.getAge();
+        Boolean actualMaritalStatus = person.getIsMarried(); //added
+
+
+        Assert.assertEquals(expectedAge, actualAge);
+        Assert.assertEquals(expectedMartialStatus, actualMaritalStatus); // added
+    }
+
+    @Test
+    public void testConstructorWithNameAndMaritalStatus() {
+        // Given
+        String expectedName = "";
+
+        boolean expectedMartialStatus = false; //added
+
+        // When
+        Person person = new Person();
+
+        // Then
+        String actualName = person.getName();
+
+        Boolean actualMaritalStatus = person.getIsMarried(); //added
+
+        Assert.assertEquals(expectedName, actualName);
+
+        Assert.assertEquals(expectedMartialStatus, actualMaritalStatus); // added
     }
 
     @Test
